@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-inter-tight: "Inter Tight", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+
+  /* Blyze Labs Design System */
+  --background: #1a1a1a;
+  --background-card: #242424;
+  --foreground: #f5f0eb;
+  --foreground-muted: #8a8a8a;
+  --accent: #00d4ff;
+  --accent-hover: #00bfff;
+  --border: #333333;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --radius: 0.5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter-tight);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}

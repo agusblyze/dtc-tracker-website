@@ -1,0 +1,321 @@
+{
+  "engineering": {
+    "id": "engineering",
+    "label": "Engineering Foundation",
+    "currentStage": 2,
+    "partialDone": {
+      "02-0": true
+    },
+    "stages": [
+      {
+        "num": "01",
+        "name": "Pixel Health Audit",
+        "description": "Complete audit and repair of all tracking pixels across platforms",
+        "milestones": [
+          "GTM container & consent-flow audit (GA4, Meta, TikTok, Pinterest)",
+          "Map current Shopify data layer events vs. platform requirements",
+          "Identify and document all missing / broken event triggers",
+          "Deliver prioritized remediation punch-list"
+        ]
+      },
+      {
+        "num": "02",
+        "name": "Core Data Infrastructure",
+        "description": "Build foundation for unified data collection and storage",
+        "milestones": [
+          "Deploy server-side GTM container on GCP / Stape for first-party data routing",
+          "Configure Conversions API for Meta & TikTok (server events)",
+          "Pipe raw event stream into BigQuery (landing dataset)",
+          "Validate end-to-end pixel + CAPI deduplication in each ad platform"
+        ]
+      },
+      {
+        "num": "03",
+        "name": "Data Modeling & Activation",
+        "description": "Transform raw data into actionable business models",
+        "milestones": [
+          "Build dbt project: staging → intermediate → mart models",
+          "Implement customer spine table (golden customer_id across sources)",
+          "Create standard eCommerce metrics mart (orders, LTV, cohort, product)",
+          "Publish first Looker Studio / BI dashboard suite (Exec, Marketing, Ops)"
+        ]
+      },
+      {
+        "num": "04",
+        "name": "Advanced Analytics & ML",
+        "description": "Predictive models and advanced attribution",
+        "milestones": [
+          "Deploy first-party audience builder → ad-platform upload automation",
+          "Integrate cost data (ads, influencers) for blended ROAS mart",
+          "Implement incrementality / MMM baseline (Robyn or Meridian)",
+          "Stand up experiment framework for paid-media hold-out tests"
+        ]
+      },
+      {
+        "num": "05",
+        "name": "Real-Time & Optimization",
+        "description": "Live personalization and automated optimization",
+        "milestones": [
+          "Streaming pipeline (Pub/Sub → BigQuery real-time)",
+          "Propensity-based retargeting / suppression in ad platforms",
+          "ML-powered budget pacing alerts + anomaly detection",
+          "Self-serve analytics portal for cross-functional teams"
+        ]
+      }
+    ]
+  },
+  "marketing": {
+    "id": "marketing",
+    "label": "Marketing",
+    "currentStage": 1,
+    "partialDone": {
+      "01-0": true
+    },
+    "stages": [
+      {
+        "num": "01",
+        "name": "Attribution Foundation",
+        "description": "Establish baseline attribution and UTM governance",
+        "milestones": [
+          "Standardize UTM taxonomy across all paid & owned channels",
+          "Deploy first-touch / last-touch attribution in GA4 + BigQuery",
+          "Build weekly channel-mix report with CPA, ROAS, CAC by source",
+          "Document data dictionary for marketing KPIs"
+        ]
+      },
+      {
+        "num": "02",
+        "name": "Channel Deep-Dives",
+        "description": "Platform-specific measurement and creative analytics",
+        "milestones": [
+          "Meta: breakdown reporting (age, gender, placement, creative)",
+          "TikTok / Pinterest: creative-performance heatmaps",
+          "Email / SMS: click-to-purchase funnel with cohort overlay",
+          "Influencer: unique code + UTM tracking → revenue reconciliation"
+        ]
+      },
+      {
+        "num": "03",
+        "name": "Incrementality & Testing",
+        "description": "Causal measurement and experimentation",
+        "milestones": [
+          "Run first geo hold-out or conversion-lift study",
+          "Integrate incrementality results into budget re-allocation model",
+          "Automate creative fatigue alerts (CTR / CPA decay thresholds)",
+          "Launch multivariate creative testing framework"
+        ]
+      },
+      {
+        "num": "04",
+        "name": "Full-Funnel Optimization",
+        "description": "Cross-channel journey and LTV-based bidding",
+        "milestones": [
+          "Map customer journey paths (awareness → repeat purchase)",
+          "Build LTV:CAC dashboard segmented by first-order SKU / promo",
+          "Integrate offline / call-center conversions (if applicable)",
+          "Shift bidding to predicted-LTV audiences in Meta & Google"
+        ]
+      },
+      {
+        "num": "05",
+        "name": "Autonomous Marketing Engine",
+        "description": "AI-driven creative and budget automation",
+        "milestones": [
+          "Deploy ML-based bid & budget pacing agents",
+          "Auto-generate creative variants from product feed + brand assets",
+          "Predictive CAC alerts + headroom modeling",
+          "Real-time contribution-margin dashboards by channel & campaign"
+        ]
+      }
+    ]
+  },
+  "retention": {
+    "id": "retention",
+    "label": "Retention",
+    "currentStage": 1,
+    "partialDone": {},
+    "stages": [
+      {
+        "num": "01",
+        "name": "Baseline Retention Metrics",
+        "description": "Establish core repeat-purchase analytics",
+        "milestones": [
+          "Calculate cohort retention curves (M1-M12 repurchase %)",
+          "Segment customers: 1x vs. 2x vs. 3+ buyers",
+          "Identify top SKUs that drive second purchase",
+          "Document current ESP / SMS flows & performance"
+        ]
+      },
+      {
+        "num": "02",
+        "name": "Lifecycle Automation",
+        "description": "Behavioral flows across email, SMS, and site",
+        "milestones": [
+          "Implement post-purchase replenishment flow (timed to product use)",
+          "Launch churn-risk reactivation flow (60 / 90 day lapsed)",
+          "Build win-back campaign with progressive discounting",
+          "Sync on-site banners / pop-ups to ESP segment triggers"
+        ]
+      },
+      {
+        "num": "03",
+        "name": "Subscription & LTV Drivers",
+        "description": "Recurring revenue and high-LTV customer programs",
+        "milestones": [
+          "Launch / optimize Subscribe-&-Save program analytics",
+          "Build LTV model: RFM + predicted next-order date",
+          "Deploy referral program tracking → ROI by referrer tier",
+          "Integrate loyalty program data with customer spine"
+        ]
+      },
+      {
+        "num": "04",
+        "name": "Predictive Retention",
+        "description": "ML models to pre-empt churn and personalize CX",
+        "milestones": [
+          "Train churn-propensity model (pre-lapse intervention)",
+          "Personalize email / SMS cadence based on engagement score",
+          "Dynamic product recommendations in lifecycle flows",
+          "Build cohort-level forecasting model for inventory planning"
+        ]
+      },
+      {
+        "num": "05",
+        "name": "1-to-1 Personalization Engine",
+        "description": "Real-time, individualized retention experiences",
+        "milestones": [
+          "Real-time website personalization (returning visitor journeys)",
+          "Next-best-action engine for CSRs / chat",
+          "Predictive reorder timing with auto-triggered outreach",
+          "Unified customer profile accessible across all touchpoints"
+        ]
+      }
+    ]
+  },
+  "commercial": {
+    "id": "commercial",
+    "label": "Commercial & Executive",
+    "currentStage": 1,
+    "partialDone": {},
+    "stages": [
+      {
+        "num": "01",
+        "name": "Executive Reporting",
+        "description": "Standardized P&L and KPI visibility for leadership",
+        "milestones": [
+          "Build executive dashboard (Revenue, GM, Ad Spend, CAC, LTV)",
+          "Automate weekly / monthly reporting cadence",
+          "Define North Star metric & supporting KPIs",
+          "Align finance & marketing on contribution-margin methodology"
+        ]
+      },
+      {
+        "num": "02",
+        "name": "Financial Analytics",
+        "description": "Deep-dive profitability and scenario modeling",
+        "milestones": [
+          "Integrate Shopify + ad cost + COGS data for P&L by channel",
+          "Build customer-level profitability model",
+          "Scenario planner: ad spend ↔ revenue ↔ margin trade-offs",
+          "Deliver quarterly business review (QBR) analytics pack"
+        ]
+      },
+      {
+        "num": "03",
+        "name": "Forecasting & Planning",
+        "description": "Demand forecasting and budget allocation",
+        "milestones": [
+          "Implement rolling 12-month revenue forecast model",
+          "Build promo impact model (discount depth vs. margin erosion)",
+          "Create annual planning templates linked to live data",
+          "Integrate inventory / supply chain signals into demand plan"
+        ]
+      },
+      {
+        "num": "04",
+        "name": "Strategic Analytics",
+        "description": "Market expansion and pricing optimization",
+        "milestones": [
+          "Pricing elasticity analysis by SKU / bundle",
+          "Build TAM / SAM / SOM models for new market evaluation",
+          "Competitive intelligence dashboard (SOV, pricing, promo)",
+          "Integrate external data (macro trends, search volume)"
+        ]
+      },
+      {
+        "num": "05",
+        "name": "AI-Assisted Decision Engine",
+        "description": "Autonomous insights and strategic recommendations",
+        "milestones": [
+          "Natural-language query layer for executive self-service",
+          "Automated anomaly detection & root-cause analysis",
+          "Prescriptive recommendations (pricing, assortment, media mix)",
+          "Board-ready insights generated from live data"
+        ]
+      }
+    ]
+  },
+  "operations": {
+    "id": "operations",
+    "label": "Operations",
+    "currentStage": 1,
+    "partialDone": {},
+    "stages": [
+      {
+        "num": "01",
+        "name": "Operational Visibility",
+        "description": "Baseline metrics for fulfillment and inventory",
+        "milestones": [
+          "Dashboard: order-to-ship time, fulfillment rate, return rate",
+          "Inventory turnover & weeks-of-supply metrics",
+          "Map current 3PL / WMS data feeds",
+          "Identify data gaps (inventory sync lag, SKU mismatches)"
+        ]
+      },
+      {
+        "num": "02",
+        "name": "Inventory Analytics",
+        "description": "Stock optimization and dead-stock prevention",
+        "milestones": [
+          "Build ABC analysis + slow-mover identification",
+          "Reorder-point automation based on sales velocity",
+          "Connect demand forecast to inventory planning",
+          "Dead-stock markdown recommendation engine"
+        ]
+      },
+      {
+        "num": "03",
+        "name": "Supply Chain Intelligence",
+        "description": "Vendor performance and logistics optimization",
+        "milestones": [
+          "Vendor scorecard (lead time, quality, cost variance)",
+          "Landed cost model (COGs + freight + duties)",
+          "Integrate PO and receiving data for inbound visibility",
+          "Build scenario model for multi-node fulfillment"
+        ]
+      },
+      {
+        "num": "04",
+        "name": "Predictive Operations",
+        "description": "ML-powered demand sensing and exception handling",
+        "milestones": [
+          "Demand-sensing model (incorporate promo, seasonality, trends)",
+          "Automated safety-stock optimization",
+          "Proactive exception alerts (stock-outs, overstock, delays)",
+          "Integrate CX data (returns reasons) into quality loop"
+        ]
+      },
+      {
+        "num": "05",
+        "name": "Autonomous Supply Chain",
+        "description": "Self-optimizing inventory and fulfillment",
+        "milestones": [
+          "Auto-replenishment triggers from forecast + POS signals",
+          "Dynamic carrier / fulfillment node selection",
+          "Real-time cost-to-serve model per order",
+          "Closed-loop feedback: sales ↔ inventory ↔ procurement"
+        ]
+      }
+    ]
+  }
+}
