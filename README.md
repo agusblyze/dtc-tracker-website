@@ -7,6 +7,17 @@ A fully self-contained interactive roadmap tracking data analytics maturity acro
 - Commercial & Executive
 - Operations
 
+## Run locally
+
+```bash
+cd /path/to/dtc-tracker-website
+python3 -m http.server 8080
+```
+
+Then open [http://localhost:8080](http://localhost:8080) in your browser. Press `Ctrl+C` to stop.
+
+---
+
 ## Deploy in 5 minutes
 
 ### Option A — Vercel (recommended)
