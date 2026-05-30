@@ -7,10 +7,26 @@
         "name": "Foundations",
         "description": "Core infrastructure — data warehouse, ETL pipelines, BI tool, and a clean dbt modeling layer.",
         "milestones": [
-          "Data Warehouse",
-          "ETL Tool",
-          "BI Tool",
-          "Data Modeling (dbt)"
+          {
+            "name": "Data Warehouse",
+            "covers": "Single source of truth warehouse (Snowflake / BigQuery / Redshift) with all sources connected via Fivetran or custom pipelines",
+            "deliverable": "Data Warehouse setup"
+          },
+          {
+            "name": "ETL Tool",
+            "covers": "Setup a tool to ingest data",
+            "deliverable": "ETL tool setup"
+          },
+          {
+            "name": "BI Tool",
+            "covers": "Provision a BI tool to visualize data",
+            "deliverable": "BI tool setup"
+          },
+          {
+            "name": "Data Modeling (dbt)",
+            "covers": "Staging / intermediate / mart layers with naming standards tests and documentation",
+            "deliverable": "Data model layer setup"
+          }
         ]
       },
       {
@@ -18,15 +34,51 @@
         "name": "Data Validation",
         "description": "Data quality gates — PK uniqueness, revenue integrity, freshness checks, CI/CD triggers, and full documentation.",
         "milestones": [
-          "dbt PK test",
-          "dbt Revenue Integrity test",
-          "dbt freshness tests",
-          "AI agent code reviewer",
-          "dbt CI triggers",
-          "README & CONTRIBUTING file",
-          "Claude terminal sync",
-          "dbt documentation",
-          "SQL fluff linter"
+          {
+            "name": "dbt PK test",
+            "covers": "Source freshness validations PK uniqueness and not_null tests composite PKs",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "dbt Revenue Integrity test",
+            "covers": "Revenue integrity test for finance consistency",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "dbt freshness tests",
+            "covers": "Source YML files per staging folder with freshness tests",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "AI agent code reviewer",
+            "covers": "AI-based code review integrated into PR workflow",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "dbt CI triggers",
+            "covers": "dbt Cloud CI job using state:modified+ with GitHub branch protection rules",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "README & CONTRIBUTING file",
+            "covers": "README with onboarding guide and CONTRIBUTING with naming rules and PR checklist",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "Claude terminal sync",
+            "covers": "Claude connected to evaluate commits",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "dbt documentation",
+            "covers": "Descriptions on all undocumented models macros and column-level mart documentation",
+            "deliverable": "Data Validation"
+          },
+          {
+            "name": "SQL fluff linter",
+            "covers": "SQL linter for consistency across the project with rules in CLAUDE.MD and CONTRIBUTING.md",
+            "deliverable": "Data Validation"
+          }
         ]
       },
       {
@@ -34,10 +86,26 @@
         "name": "Project Management",
         "description": "Team workflows — unified Slack channels, GitHub PR notifications, and Linear × GitHub integration.",
         "milestones": [
-          "#data-alerts channel",
-          "GitHub PR channel",
-          "#ask-data channel",
-          "Project Management tool × GitHub"
+          {
+            "name": "#data-alerts channel",
+            "covers": "Unified #data-alerts channel plus #ask-data and #data-team Slack channels",
+            "deliverable": "Project Management"
+          },
+          {
+            "name": "GitHub PR channel",
+            "covers": "GitHub PR notifications in Slack",
+            "deliverable": "Project Management"
+          },
+          {
+            "name": "#ask-data channel",
+            "covers": "#ask-data channel for company-wide ticket submission to Linear triage",
+            "deliverable": "Project Management"
+          },
+          {
+            "name": "Project Management tool × GitHub",
+            "covers": "Linear <> GitHub integration with automatic PR sync and branch naming convention",
+            "deliverable": "Project Management"
+          }
         ]
       },
       {
@@ -45,15 +113,51 @@
         "name": "AI Readiness",
         "description": "Claude integrated across the data stack — Snowflake MCP, team licenses, marketing skills, and project prompts.",
         "milestones": [
-          "Provision Claude Team license",
-          "Add table metadata blocks",
-          "Snowflake × Claude MCP",
-          "Claude Marketing project",
-          "Interview Marketing team",
-          "Claude Marketing team skill",
-          "Create Claude skill",
-          "Create Claude project",
-          "Update CLAUDE.MD"
+          {
+            "name": "Provision Claude Team license",
+            "covers": "Claude Team license enabling project-based collaboration with skills MCP connections and documentation",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Add table metadata blocks",
+            "covers": "Meta blocks in YAML with tags for grain business domain PII and unit",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Snowflake × Claude MCP",
+            "covers": "AI read-only role AI warehouse service account and Snowflake MCP deployment for Claude to query the data warehouse",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Claude Marketing project",
+            "covers": "Marketing Analytics Assistant project with system prompt skill and team members added",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Interview Marketing team",
+            "covers": "Discovery sessions with Marketing team to surface common questions and reports",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Claude Marketing team skill",
+            "covers": "Claude skill scoped to the data model and business context with pre-built queries for Marketing",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Create Claude skill",
+            "covers": "Skill with step-by-step workflow for the weekly report",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Create Claude project",
+            "covers": "Claude project for weekly company status reporting",
+            "deliverable": "AI Readiness"
+          },
+          {
+            "name": "Update CLAUDE.MD",
+            "covers": "CLAUDE.MD updated with all project changes",
+            "deliverable": "AI Readiness"
+          }
         ]
       }
     ]
@@ -66,11 +170,31 @@
         "name": "Basic Visibility",
         "description": "All spend sources consolidated. Baseline platform metrics in one place.",
         "milestones": [
-          "Paid spend & platform metrics consolidated",
-          "Marketing channel taxonomy defined",
-          "Manual spend sources uploaded",
-          "Marketing budget plan entered",
-          "New vs. returning customer split"
+          {
+            "name": "Paid spend & platform metrics consolidated",
+            "covers": "All ad platform spend and metrics (Meta, Google, TikTok, Pinterest, etc.) pulled into one place via API",
+            "deliverable": "Marketing performance dashboard with CAC, CPM, ROAS, CPC by channel"
+          },
+          {
+            "name": "Marketing channel taxonomy defined",
+            "covers": "Agreed channel and subchannel definitions including Branded vs Non-Branded and Pmax classification",
+            "deliverable": "Marketing channel and subchannel taxonomy"
+          },
+          {
+            "name": "Manual spend sources uploaded",
+            "covers": "Influencer, podcast, affiliate, agency, and OOH spend entered via Google Sheets template",
+            "deliverable": "Consolidation of all marketing spend sources"
+          },
+          {
+            "name": "Marketing budget plan entered",
+            "covers": "Annual or quarterly budget by channel and month loaded into the warehouse",
+            "deliverable": "Actual spend vs. planned budget view by channel week and month"
+          },
+          {
+            "name": "New vs. returning customer split",
+            "covers": "Acquisition metrics separated from returning customer activity",
+            "deliverable": "Segmented acquisition and retention metrics"
+          }
         ]
       },
       {
@@ -78,14 +202,46 @@
         "name": "Basic Attribution",
         "description": "UTM hygiene, web events, and first attribution models — last-click, first-click, and blended CAC.",
         "milestones": [
-          "UTM & campaign naming convention",
-          "Web event data collection",
-          "Event sessionization",
-          "UTM cleaning & classification",
-          "Last-click attribution model",
-          "First-click attribution model",
-          "Blended CAC trend reporting",
-          "Period over period performance view"
+          {
+            "name": "UTM & campaign naming convention",
+            "covers": "Consistent UTM naming convention for source, medium, campaign, and content across all platforms",
+            "deliverable": "GSheet template and documentation for UTM naming convention"
+          },
+          {
+            "name": "Web event data collection",
+            "covers": "Pageviews, add-to-carts, checkout starts, and purchases captured via Segment or GA4",
+            "deliverable": "Web events and conversion dbt models and tables"
+          },
+          {
+            "name": "Event sessionization",
+            "covers": "Raw events grouped into sessions with source / medium / campaign assigned",
+            "deliverable": "Session dbt model"
+          },
+          {
+            "name": "UTM cleaning & classification",
+            "covers": "Historical UTM data audited cleaned and reclassified with ongoing compliance monitoring",
+            "deliverable": "Cleaned and classified UTM source, medium, and campaign"
+          },
+          {
+            "name": "Last-click attribution model",
+            "covers": "Spend divided by last-touch new subscribers by channel updated daily",
+            "deliverable": "Blended CAC, last-click ROAS, CVR, and new customer acquisition dashboard"
+          },
+          {
+            "name": "First-click attribution model",
+            "covers": "Where customers first discovered the brand with first-touch CAC alongside last-click",
+            "deliverable": "First-click marketing performance dashboard with Blended CAC, ROAS, CVR"
+          },
+          {
+            "name": "Blended CAC trend reporting",
+            "covers": "Blended and channel CAC ranges based on Last Click, First Click, and platform performance consolidated",
+            "deliverable": "CAC Performance dashboard"
+          },
+          {
+            "name": "Period over period performance view",
+            "covers": "WoW, MoM, and YoY comparisons for ROAS, CAC, and new customer acquisition",
+            "deliverable": "PoP Performance dashboard"
+          }
         ]
       },
       {
@@ -93,9 +249,21 @@
         "name": "Budget Tracking",
         "description": "Link spend to outcomes. Data-driven CAC targets, live pacing dashboards, and scenario modeling.",
         "milestones": [
-          "CAC targets by channel",
-          "Budget pacing dashboard",
-          "Scenario modeling (budget what-if)"
+          {
+            "name": "CAC targets by channel",
+            "covers": "Target CAC per channel derived from LTV cohorts and payback period goals",
+            "deliverable": "CAC Targets"
+          },
+          {
+            "name": "Budget pacing dashboard",
+            "covers": "Actual spend vs. plan by channel, week, and month with over/under flags",
+            "deliverable": "Marketing Budget Pacing view"
+          },
+          {
+            "name": "Scenario modeling (budget what-if)",
+            "covers": "Model-driven what-if analysis for CAC and subscriber volume impact of budget changes",
+            "deliverable": "Budget What-if Analysis"
+          }
         ]
       },
       {
@@ -103,10 +271,26 @@
         "name": "Channel Specific",
         "description": "Deep attribution by channel type — partnerships, creative performance, landing pages, and product.",
         "milestones": [
-          "Partnership performance dashboard",
-          "Creative performance attribution",
-          "Landing page performance dashboard",
-          "Product acquisition performance"
+          {
+            "name": "Partnership performance dashboard",
+            "covers": "Affiliate and influencer performance including UTM tracking, promo code performance, and partner leaderboard",
+            "deliverable": "Partnership Performance dashboard"
+          },
+          {
+            "name": "Creative performance attribution",
+            "covers": "CAC and ROAS broken down to the ad creative level",
+            "deliverable": "Creative Performance dashboard"
+          },
+          {
+            "name": "Landing page performance dashboard",
+            "covers": "Conversion performance tracking for internal and external landing pages",
+            "deliverable": "Landing Page Performance dashboard"
+          },
+          {
+            "name": "Product acquisition performance",
+            "covers": "Marketing spend classified by product with product-based CAC performance",
+            "deliverable": "Product Acquisition Attribution model, Product Acquisition Performance dashboard"
+          }
         ]
       },
       {
@@ -114,16 +298,56 @@
         "name": "Enhanced Attribution",
         "description": "Promo codes, post-purchase surveys, identity resolution, and LTV-weighted attribution models.",
         "milestones": [
-          "Promo code tracking",
-          "Post-purchase survey deployed",
-          "Survey response classification",
-          "Landing pages & referrers classification",
-          "Identity resolution",
-          "Enhanced last-click attribution",
-          "Position-based attribution model",
-          "Audience segment CAC",
-          "Enhanced blended CAC reporting",
-          "CAC:LTV by channel"
+          {
+            "name": "Promo code tracking",
+            "covers": "Every promo code mapped to its campaign channel and partner with orders tagged at checkout",
+            "deliverable": "Promo Performance dashboard"
+          },
+          {
+            "name": "Post-purchase survey deployed",
+            "covers": "PMF/Fairing/Enquire survey live at order confirmation capturing how customers heard about the brand",
+            "deliverable": "PPS survey deployed"
+          },
+          {
+            "name": "Survey response classification",
+            "covers": "Open-text survey responses categorized into channel taxonomy updated weekly",
+            "deliverable": "PPS survey responses classified"
+          },
+          {
+            "name": "Landing pages & referrers classification",
+            "covers": "Landing pages and URL referrers classified to enhance attribution when UTMs are unavailable",
+            "deliverable": "Enhanced Last Click and First Touch with landings and referrers"
+          },
+          {
+            "name": "Identity resolution",
+            "covers": "Anonymous visitor IDs stitched to known customer IDs at conversion",
+            "deliverable": "User stitching for converted anonIDs"
+          },
+          {
+            "name": "Enhanced last-click attribution",
+            "covers": "Blended model weighting platform data, promo code signal, and PMF survey into adjusted CAC per channel",
+            "deliverable": "Enhanced Last Click attribution"
+          },
+          {
+            "name": "Position-based attribution model",
+            "covers": "Credit distributed across all touches in the journey using position-based (40/20/40) weighting",
+            "deliverable": "Position-based Marketing attribution model"
+          },
+          {
+            "name": "Audience segment CAC",
+            "covers": "Prospecting vs. retargeting vs. lookalike CAC broken out",
+            "deliverable": "Segmented CAC by audience type"
+          },
+          {
+            "name": "Enhanced blended CAC reporting",
+            "covers": "Total marketing spend divided by total new subscribers including all paid, influencer, agency, and overhead costs",
+            "deliverable": "Updated CAC Performance dashboard with enhanced and new attribution models"
+          },
+          {
+            "name": "CAC:LTV by channel",
+            "covers": "LTV cohorts joined to channel-level CAC updated monthly to feed media mix decisions",
+            "deliverable": "CAC vs LTV dashboard, LTV-informed channel mix"
+          }
         ]
       },
       {
@@ -131,14 +355,46 @@
         "name": "Signal Engineering",
         "description": "Server-side events, CAPI, enhanced conversions, customer list syncs, and LTV-weighted bidding.",
         "milestones": [
-          "Pixel tracking audit",
-          "Conversion API (Meta & TikTok)",
-          "Google Enhanced Conversions",
-          "Offline conversion uploads",
-          "Customer list syncs",
-          "LTV-weighted bidding signals",
-          "Event deduplication",
-          "Signal quality monitoring"
+          {
+            "name": "Pixel tracking audit",
+            "covers": "Validate all pixels are firing correctly, validate event firing on website funnels, Meta EMQ audit",
+            "deliverable": "Website tracking audit, website funnel dashboard"
+          },
+          {
+            "name": "Conversion API (Meta & TikTok)",
+            "covers": "Server-side purchase events sent directly to Meta and TikTok APIs bypassing iOS14+ signal loss",
+            "deliverable": "CAPI implementation for Meta and TikTok"
+          },
+          {
+            "name": "Google Enhanced Conversions",
+            "covers": "Hashed customer email/phone sent back to Google Ads at conversion",
+            "deliverable": "Google Enhanced Conversions implementation"
+          },
+          {
+            "name": "Offline conversion uploads",
+            "covers": "Subscription activations, renewals, and LTV milestones pushed to platforms as custom offline events",
+            "deliverable": "Offline conversion upload pipeline"
+          },
+          {
+            "name": "Customer list syncs",
+            "covers": "Active, lapsed, and high-LTV subscriber segments synced to platforms on a regular schedule",
+            "deliverable": "Customer list sync pipeline"
+          },
+          {
+            "name": "LTV-weighted bidding signals",
+            "covers": "Predicted LTV sent to platforms at conversion to enable value-based bidding",
+            "deliverable": "LTV-weighted bidding signal pipeline"
+          },
+          {
+            "name": "Event deduplication",
+            "covers": "Server-side and browser-side events deduplicated using event_id",
+            "deliverable": "Event deduplication implementation"
+          },
+          {
+            "name": "Signal quality monitoring",
+            "covers": "Match rates, event volume, and deduplication rates tracked weekly with degradation alerts",
+            "deliverable": "Signal quality monitoring dashboard"
+          }
         ]
       },
       {
@@ -146,13 +402,41 @@
         "name": "Channel Testing",
         "description": "Holdout methodology, incrementality tests, and geo experiments to measure true lift per channel.",
         "milestones": [
-          "Holdout test framework",
-          "Incrementality tests",
-          "Geo-based channel experiments",
-          "Podcast & influencer measurement",
-          "OOH / linear TV measurement",
-          "Test results → attribution weights",
-          "Ongoing test roadmap"
+          {
+            "name": "Holdout test framework",
+            "covers": "Methodology defined for control cell size, randomization, minimum detectable effect, and test duration",
+            "deliverable": "Reusable holdout test framework"
+          },
+          {
+            "name": "Incrementality tests",
+            "covers": "Audience held back from campaigns to measure incremental new subscriber lift",
+            "deliverable": "Incrementality test results"
+          },
+          {
+            "name": "Geo-based channel experiments",
+            "covers": "Channel paused or increased in specific markets with pre/post subscriber volume compared",
+            "deliverable": "Geo experiment results"
+          },
+          {
+            "name": "Podcast & influencer measurement",
+            "covers": "Unique URLs, promo codes, and branded search lift tracked per partner placement",
+            "deliverable": "Podcast and influencer measurement framework"
+          },
+          {
+            "name": "OOH / linear TV measurement",
+            "covers": "Geo-level lift analysis comparing exposed and unexposed markets for offline media",
+            "deliverable": "OOH/TV lift analysis"
+          },
+          {
+            "name": "Test results → attribution weights",
+            "covers": "Incrementality findings update channel weights in the attribution model",
+            "deliverable": "Updated attribution model with incrementality weights"
+          },
+          {
+            "name": "Ongoing test roadmap",
+            "covers": "Always-on quarterly experiment calendar with results documented and shared with media team",
+            "deliverable": "Test roadmap and results documentation"
+          }
         ]
       },
       {
@@ -160,14 +444,46 @@
         "name": "Mix Modeling",
         "description": "Bayesian MMM with adstock, diminishing returns curves, and data-driven budget reallocation.",
         "milestones": [
-          "Historical data preparation",
-          "MMM model build",
-          "Adstock and lag effects",
-          "Diminishing returns curves",
-          "Revenue decomposition",
-          "Budget reallocation recs.",
-          "MMM refresh cadence",
-          "MMM × holdout validation"
+          {
+            "name": "Historical data preparation",
+            "covers": "18-24 months of weekly spend, revenue, new subscribers, and macro variables assembled and cleaned",
+            "deliverable": "Clean historical dataset for MMM"
+          },
+          {
+            "name": "MMM model build",
+            "covers": "Bayesian or ridge regression MMM fitted with response curves and holdout validation",
+            "deliverable": "MMM model"
+          },
+          {
+            "name": "Adstock and lag effects",
+            "covers": "Delayed impact of brand spend modeled per channel to capture halo effects",
+            "deliverable": "Adstock and lag model"
+          },
+          {
+            "name": "Diminishing returns curves",
+            "covers": "Marginal ROAS curve by channel identifying saturation points",
+            "deliverable": "Diminishing returns curves by channel"
+          },
+          {
+            "name": "Revenue decomposition",
+            "covers": "Revenue split into baseline, paid channels, seasonality, and external factors",
+            "deliverable": "Revenue decomposition output"
+          },
+          {
+            "name": "Budget reallocation recs.",
+            "covers": "Optimization output from MMM recommending channel mix to maximize new subscribers at same budget",
+            "deliverable": "MMM budget reallocation recommendations"
+          },
+          {
+            "name": "MMM refresh cadence",
+            "covers": "Model refitted quarterly with drift monitoring between scheduled refits",
+            "deliverable": "MMM refresh process"
+          },
+          {
+            "name": "MMM × holdout validation",
+            "covers": "MMM outputs cross-validated against holdout test results with discrepancies investigated",
+            "deliverable": "Validated MMM outputs"
+          }
         ]
       },
       {
@@ -175,8 +491,16 @@
         "name": "Self-Optimizing",
         "description": "Triangulated attribution and a self-optimizing feedback loop across all models.",
         "milestones": [
-          "Triangulated attribution model",
-          "Self-optimizing system"
+          {
+            "name": "Triangulated attribution model",
+            "covers": "Click-based, impression-based, and incrementality models combined into a final blended attribution",
+            "deliverable": "Triangulated Attribution Model, updated CAC tracker view"
+          },
+          {
+            "name": "Self-optimizing system",
+            "covers": "Signal engineering, MMM, incrementality tests, and LTV signals forming a feedback loop",
+            "deliverable": "Holistic view of all attribution tools working together"
+          }
         ]
       }
     ]
@@ -189,12 +513,36 @@
         "name": "Revenue Visibility",
         "description": "Gross and net revenue trending by product, SKU, and plan — with period-over-period views and a daily dashboard.",
         "milestones": [
-          "Gross revenue trending",
-          "Net revenue (after deductions)",
-          "Revenue by product, SKU & plan",
-          "New vs. recurring revenue split",
-          "Period over period comparisons",
-          "Data For Every Day dashboard"
+          {
+            "name": "Gross revenue trending",
+            "covers": "Gross revenue by day, week, and month with trend lines",
+            "deliverable": "Gross Revenue visibility"
+          },
+          {
+            "name": "Net revenue (after deductions)",
+            "covers": "Net revenue after discounts, refunds, returns, and chargebacks with gross vs. net delta",
+            "deliverable": "Net Revenue visibility"
+          },
+          {
+            "name": "Revenue by product, SKU & plan",
+            "covers": "Revenue broken down by product line, SKU, and subscription plan",
+            "deliverable": "Revenue segments"
+          },
+          {
+            "name": "New vs. recurring revenue split",
+            "covers": "First-order revenue separated from subscription renewal revenue",
+            "deliverable": "New vs Recurring view"
+          },
+          {
+            "name": "Period over period comparisons",
+            "covers": "WoW, MoM, and YoY comparisons for all core revenue metrics with seasonality-adjusted growth",
+            "deliverable": "Period over Period views"
+          },
+          {
+            "name": "Data For Every Day dashboard",
+            "covers": "Single daily-refreshed dashboard with gross revenue, net revenue, new subscribers, orders, AOV, refunds, and churn",
+            "deliverable": "Data For Every Day dashboard"
+          }
         ]
       },
       {
@@ -202,9 +550,21 @@
         "name": "Targets & Planning",
         "description": "Annual and quarterly targets set by channel and day, aligned with the marketing budget plan.",
         "milestones": [
-          "Commercial target creation",
-          "Targets broken down by days",
-          "Targets aligned with marketing budget"
+          {
+            "name": "Commercial target creation",
+            "covers": "Annual and quarterly revenue targets set by channel and day with documented methodology",
+            "deliverable": "Revenue and Growth annual targets"
+          },
+          {
+            "name": "Targets broken down by days",
+            "covers": "Annual target decomposed into daily, weekly, and monthly milestones accounting for seasonality and planned campaigns",
+            "deliverable": "Daily targets embedded in analytics"
+          },
+          {
+            "name": "Targets aligned with marketing budget",
+            "covers": "Revenue targets explicitly tied to planned marketing spend so changes in spend cascade through to targets",
+            "deliverable": "Aligned Marketing budget with Commercial Targets"
+          }
         ]
       },
       {
@@ -212,8 +572,16 @@
         "name": "Pacing & Actuals",
         "description": "Live revenue and marketing spend pacing vs. targets — refreshed daily with over/under flags.",
         "milestones": [
-          "Revenue pacing dashboard",
-          "Marketing pacing dashboard"
+          {
+            "name": "Revenue pacing dashboard",
+            "covers": "Actuals vs. weekly and monthly target with current trajectory projected to month-end and quarter-end, refreshed daily",
+            "deliverable": "Revenue Pacing dashboard"
+          },
+          {
+            "name": "Marketing pacing dashboard",
+            "covers": "Actual marketing spend vs. budget by channel tied to the revenue pacing view",
+            "deliverable": "Marketing Pacing dashboard"
+          }
         ]
       },
       {
@@ -221,9 +589,21 @@
         "name": "Business Reviews",
         "description": "Automated WBR, MBR, and an always-on business health panel for leadership.",
         "milestones": [
-          "WBR — weekly business review",
-          "MBR — monthly business review",
-          "Business Health Panel"
+          {
+            "name": "WBR — weekly business review",
+            "covers": "Automated weekly report covering revenue, pacing, marketing spend, subscriber net adds, product flags, wins, and risks",
+            "deliverable": "WBR report"
+          },
+          {
+            "name": "MBR — monthly business review",
+            "covers": "Deeper monthly review including full P&L actuals, cohort performance, channel efficiency, and forward outlook",
+            "deliverable": "MBR report"
+          },
+          {
+            "name": "Business Health Panel",
+            "covers": "Always-on live view of 10-12 core metrics: MRR, pacing, new subs, churn, blended CAC, AOV, contribution margin, NRR",
+            "deliverable": "Business Health dashboard"
+          }
         ]
       },
       {
@@ -231,10 +611,26 @@
         "name": "Forecasting",
         "description": "Dynamic forward projections blending trends, cohort curves, spend, and billing schedules.",
         "milestones": [
-          "Trend-based forecast",
-          "New subscriber acquisition forecast",
-          "Subscription revenue forecast (deterministic)",
-          "Pacing vs. forecast dashboard"
+          {
+            "name": "Trend-based forecast",
+            "covers": "Dynamic forward projection blending revenue trends, cohort retention, planned spend, and calendar events updated weekly",
+            "deliverable": "Revenue forecast"
+          },
+          {
+            "name": "New subscriber acquisition forecast",
+            "covers": "Forward projection of new subscriber volume based on planned marketing spend by channel and historical CAC",
+            "deliverable": "Acquisition Forecast"
+          },
+          {
+            "name": "Subscription revenue forecast (deterministic)",
+            "covers": "Billing calendar model: active subscribers x billing cadence x AOV projected 30/60/90 days forward, accurate within 3-5%",
+            "deliverable": "Subscription forecast"
+          },
+          {
+            "name": "Pacing vs. forecast dashboard",
+            "covers": "Actuals compared against both static annual target and dynamic forecast simultaneously with three-line view",
+            "deliverable": "Pacing vs. forecast dashboard"
+          }
         ]
       },
       {
@@ -242,10 +638,26 @@
         "name": "Cost Foundation",
         "description": "Fully landed COGS, fulfillment costs, returns tracking, and contribution margin at SKU level.",
         "milestones": [
-          "Fully landed COGS by product & SKU",
-          "Fulfillment cost per order",
-          "Returns cost tracking",
-          "Gross & contribution margin"
+          {
+            "name": "Fully landed COGS by product & SKU",
+            "covers": "Landed COGS at the SKU level including unit cost, inbound freight, and duties",
+            "deliverable": "COGS visibility"
+          },
+          {
+            "name": "Fulfillment cost per order",
+            "covers": "Total fulfillment cost per order (pick & pack, freight, 3PL fees) by carrier, region, service level, and box size",
+            "deliverable": "Updated Fulfillment dashboard"
+          },
+          {
+            "name": "Returns cost tracking",
+            "covers": "Return rate per SKU plus cost to process each return, tracked as % of revenue monthly",
+            "deliverable": "Return cost view"
+          },
+          {
+            "name": "Gross & contribution margin",
+            "covers": "Gross Margin and Contribution Margin added to metric catalogue and LTV, broken down across all key dimensions",
+            "deliverable": "Gross Margin and Contribution Margin visibility"
+          }
         ]
       },
       {
@@ -253,8 +665,16 @@
         "name": "Unit Economics",
         "description": "Profitability trending, discount depth analysis, and margin impact by campaign and segment.",
         "milestones": [
-          "Profitability % trending",
-          "Discount depth analysis"
+          {
+            "name": "Profitability % trending",
+            "covers": "Gross margin percentage tracked monthly to detect input cost creep and product mix shifts",
+            "deliverable": "Profitability dashboard"
+          },
+          {
+            "name": "Discount depth analysis",
+            "covers": "Average discount % by campaign, channel, and segment with impact on contribution margin quantified",
+            "deliverable": "Discount Impact and profitability analysis"
+          }
         ]
       },
       {
@@ -262,9 +682,21 @@
         "name": "P&L",
         "description": "Full P&L dashboard from revenue to EBITDA, actuals vs. targets, and subscriber-level P&L.",
         "milestones": [
-          "Full P&L dashboard",
-          "P&L actuals vs. targets",
-          "Subscriber P&L"
+          {
+            "name": "Full P&L dashboard",
+            "covers": "Revenue, COGS, gross margin, contribution margin, opex, and EBITDA updated weekly",
+            "deliverable": "P&L visibility including GM, NMV, and Contribution Margin"
+          },
+          {
+            "name": "P&L actuals vs. targets",
+            "covers": "Every P&L line compared against annual budget plan with variance in dollars and %",
+            "deliverable": "P&L actuals vs. targets"
+          },
+          {
+            "name": "Subscriber P&L",
+            "covers": "Revenue minus all variable costs per subscriber over their lifetime",
+            "deliverable": "Subscriber P&L"
+          }
         ]
       },
       {
@@ -272,9 +704,21 @@
         "name": "CAC & Payback",
         "description": "Fully-loaded CAC, payback period by channel, and LTV:CAC ratios by cohort.",
         "milestones": [
-          "Fully-loaded CAC",
-          "Payback period by channel",
-          "LTV:CAC ratio by channel & cohort"
+          {
+            "name": "Fully-loaded CAC",
+            "covers": "Total acquisition cost including all marketing spend, agency fees, creative, tools, and headcount",
+            "deliverable": "Fully-loaded CAC"
+          },
+          {
+            "name": "Payback period by channel",
+            "covers": "Months to recover acquisition cost from contribution margin per subscriber, by channel",
+            "deliverable": "Payback analysis"
+          },
+          {
+            "name": "LTV:CAC ratio by channel & cohort",
+            "covers": "LTV cohorts joined to channel-level CAC with >3:1 ratio as DTC scaling threshold, tracked by channel and cohort",
+            "deliverable": "LTV:CAC curves"
+          }
         ]
       },
       {
@@ -282,12 +726,36 @@
         "name": "Merchandise Performance",
         "description": "SKU-level basket mix, merchandise dashboard, NPS by product, return reasons, reorder rate, and health score.",
         "milestones": [
-          "Product basket mix",
-          "Merchandise performance dashboard",
-          "Review & NPS mentions by SKU",
-          "Returns reason & CS ticket volume by product",
-          "Reorder rate by product",
-          "Product health score (0–100)"
+          {
+            "name": "Product basket mix",
+            "covers": "Products frequently purchased together analyzed excluding marketing and promotion effects",
+            "deliverable": "Product Basket dashboard"
+          },
+          {
+            "name": "Merchandise performance dashboard",
+            "covers": "Revenue by SKU and category with PoP performance, Gross Margin, acquisition performance, and web CVR",
+            "deliverable": "Merchandise Performance dashboard"
+          },
+          {
+            "name": "Review & NPS mentions by SKU",
+            "covers": "Star ratings and review text from all channels joined to SKU-level data, trended monthly",
+            "deliverable": "Product sentiment analysis"
+          },
+          {
+            "name": "Returns reason & CS ticket volume by product",
+            "covers": "Structured return reason codes and support ticket volume per SKU with theme classification and early warning alerts",
+            "deliverable": "Updated Product sentiment analysis"
+          },
+          {
+            "name": "Reorder rate by product",
+            "covers": "% of customers who specifically reorder the same SKU in subsequent orders",
+            "deliverable": "Reorder rate view"
+          },
+          {
+            "name": "Product health score (0–100)",
+            "covers": "Composite score per SKU combining sales velocity, returns rate, review score, NPS sentiment, CS ticket rate, and reorder rate",
+            "deliverable": "Product Health dashboard"
+          }
         ]
       }
     ]
@@ -300,12 +768,36 @@
         "name": "Fulfillment Visibility",
         "description": "Order volume, fulfillment cost, shipping zones, carrier performance, and a daily ops dashboard.",
         "milestones": [
-          "Orders shipped by day, week & month",
-          "Fulfillment cost per order",
-          "Shipping zone distribution",
-          "Carrier performance breakdown",
-          "On-time delivery rate (top-level)",
-          "Operations weekly dashboard"
+          {
+            "name": "Orders shipped by day, week & month",
+            "covers": "Total order volume shipped by region, carrier, and service level",
+            "deliverable": "Fulfillment dashboard"
+          },
+          {
+            "name": "Fulfillment cost per order",
+            "covers": "Total fulfillment cost per order (pick & pack, freight, 3PL fees) by carrier, region, service level, and box size",
+            "deliverable": "Updated Fulfillment dashboard"
+          },
+          {
+            "name": "Shipping zone distribution",
+            "covers": "% of orders shipping to each carrier zone to understand freight cost drivers",
+            "deliverable": "Shipping zone analysis"
+          },
+          {
+            "name": "Carrier performance breakdown",
+            "covers": "On-time delivery rate, damage rate, and lost-in-transit rate by carrier",
+            "deliverable": "Updated Fulfillment dashboard"
+          },
+          {
+            "name": "On-time delivery rate (top-level)",
+            "covers": "% of orders delivered within the promised window, tracked daily",
+            "deliverable": "Updated Fulfillment dashboard"
+          },
+          {
+            "name": "Operations weekly dashboard",
+            "covers": "OTIF rate, orders shipped, fulfillment cost, inventory alerts, quality complaint count, and return volume",
+            "deliverable": "Operations weekly dashboard"
+          }
         ]
       },
       {
@@ -313,12 +805,36 @@
         "name": "Inventory Visibility",
         "description": "SKU-level on-hand counts, weeks on hand, availability %, inventory value, low-stock alerts, and dead stock flags.",
         "milestones": [
-          "SKU-level inventory on hand",
-          "Weeks on hand by SKU",
-          "Inventory availability %",
-          "Inventory value on hand",
-          "Low stock alerts",
-          "Dead stock identification"
+          {
+            "name": "SKU-level inventory on hand",
+            "covers": "Current inventory count per SKU updated daily from 3PL WMS feed",
+            "deliverable": "Inventory dashboard"
+          },
+          {
+            "name": "Weeks on hand by SKU",
+            "covers": "Current inventory divided by average weekly consumption rate per SKU",
+            "deliverable": "Inventory dashboard"
+          },
+          {
+            "name": "Inventory availability %",
+            "covers": "Inventory availability rate per SKU to flag coverage gaps",
+            "deliverable": "Inventory dashboard"
+          },
+          {
+            "name": "Inventory value on hand",
+            "covers": "Inventory at cost by SKU and in total to track working capital",
+            "deliverable": "Inventory dashboard"
+          },
+          {
+            "name": "Low stock alerts",
+            "covers": "Automated flag when a SKU falls below its reorder threshold with on-hand, consumption rate, and days until stockout",
+            "deliverable": "Low stock alerts based on forecast"
+          },
+          {
+            "name": "Dead stock identification",
+            "covers": "SKUs with zero or near-zero velocity over trailing 60/90 days flagged for markdown or discontinuation",
+            "deliverable": "Stock alerts based on forecast"
+          }
         ]
       },
       {
@@ -326,13 +842,41 @@
         "name": "OTIF & Quality",
         "description": "On-time, in-full delivery rate broken down by carrier, SKU, damage, lost-in-transit, order accuracy, and customer-reported issues.",
         "milestones": [
-          "OTIF rate",
-          "On-time rate by carrier",
-          "In-full rate by SKU",
-          "Damage rate by carrier & route",
-          "Lost in transit rate",
-          "Order accuracy rate",
-          "Customer-reported fulfillment issues"
+          {
+            "name": "OTIF rate",
+            "covers": "On-time, in-full delivery rate by carrier, region, and 3PL facility against a >95% DTC benchmark",
+            "deliverable": "OTIF dashboard"
+          },
+          {
+            "name": "On-time rate by carrier",
+            "covers": "On-time delivery % per carrier to identify underperformance and enable SLA renegotiation",
+            "deliverable": "OTIF dashboard"
+          },
+          {
+            "name": "In-full rate by SKU",
+            "covers": "% of orders shipped complete per SKU to surface inventory planning gaps or 3PL pick errors",
+            "deliverable": "OTIF dashboard"
+          },
+          {
+            "name": "Damage rate by carrier & route",
+            "covers": "% of orders damaged by carrier, route, and packaging configuration",
+            "deliverable": "OTIF dashboard"
+          },
+          {
+            "name": "Lost in transit rate",
+            "covers": "% of shipments lost by carrier, region, and service level with cost impact tracked",
+            "deliverable": "OTIF dashboard"
+          },
+          {
+            "name": "Order accuracy rate",
+            "covers": "% of orders shipped with the correct item quantity and address",
+            "deliverable": "OTIF dashboard"
+          },
+          {
+            "name": "Customer-reported fulfillment issues",
+            "covers": "CS tickets and reviews citing fulfillment problems tagged and trended separately from product quality issues",
+            "deliverable": "OTIF dashboard"
+          }
         ]
       },
       {
@@ -340,11 +884,31 @@
         "name": "Returns & Reverse Logistics",
         "description": "Return volume, return rate by SKU, restockable vs. write-off splits, net inventory impact, and quality complaint tracking.",
         "milestones": [
-          "Return volume by SKU, region & reason",
-          "Return rate by SKU",
-          "Restockable vs. non-restockable returns",
-          "Net return impact on inventory",
-          "Product quality complaints"
+          {
+            "name": "Return volume by SKU, region & reason",
+            "covers": "Total returns by product, geography, and structured reason codes",
+            "deliverable": "Returns dashboard"
+          },
+          {
+            "name": "Return rate by SKU",
+            "covers": "Return rate per SKU as % of units shipped with automatic flag when exceeding category average",
+            "deliverable": "Returns dashboard"
+          },
+          {
+            "name": "Restockable vs. non-restockable returns",
+            "covers": "% of returned units recoverable as sellable inventory vs. written off",
+            "deliverable": "Returns dashboard"
+          },
+          {
+            "name": "Net return impact on inventory",
+            "covers": "How much returned stock is recovered as sellable inventory each week to feed inventory planning",
+            "deliverable": "Returns dashboard"
+          },
+          {
+            "name": "Product quality complaints",
+            "covers": "Complaints citing product quality by SKU, trended weekly, with root cause categorization",
+            "deliverable": "Returns dashboard"
+          }
         ]
       },
       {
@@ -352,14 +916,46 @@
         "name": "Vendor & Supplier Performance",
         "description": "Supplier on-time delivery, fill rate, lead time variance, cost variance, quality rejection, concentration risk, and supplier scorecard.",
         "milestones": [
-          "Supplier on-time delivery rate",
-          "Supplier fill rate",
-          "Lead time by supplier",
-          "Cost variance by supplier",
-          "Quality rejection rate",
-          "Supplier concentration risk",
-          "Supplier scorecard",
-          "3PL performance scorecard"
+          {
+            "name": "Supplier on-time delivery rate",
+            "covers": "% of POs delivered on or before the requested delivery date per supplier",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "Supplier fill rate",
+            "covers": "Units received vs. units ordered per PO and per supplier",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "Lead time by supplier",
+            "covers": "Average lead time and variance per supplier quantified as standard deviation",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "Cost variance by supplier",
+            "covers": "Actual invoice cost vs. PO cost per supplier trended to catch creeping price increases",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "Quality rejection rate",
+            "covers": "% of units rejected at receiving due to quality issues per supplier",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "Supplier concentration risk",
+            "covers": "% of total COGS sourced from each supplier with single-supplier dependency flags",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "Supplier scorecard",
+            "covers": "Composite monthly scorecard per supplier: on-time delivery, fill rate, quality rejection, cost variance",
+            "deliverable": "Vendor dashboard"
+          },
+          {
+            "name": "3PL performance scorecard",
+            "covers": "Monthly scorecard per 3PL: OTIF rate, order accuracy, cost vs. contract, quality complaint rate, returns processing time",
+            "deliverable": "Vendor dashboard"
+          }
         ]
       },
       {
@@ -367,12 +963,36 @@
         "name": "Inventory Planning",
         "description": "Consumption rates, reorder points, safety stock models, EOQ optimization, inventory health dashboard, and ops input to WBR/MBR.",
         "milestones": [
-          "Consumption rate by SKU",
-          "Reorder point calculation",
-          "Safety stock model",
-          "Reorder quantity optimization",
-          "Inventory health planning dashboard",
-          "Operations input to WBR/MBR"
+          {
+            "name": "Consumption rate by SKU",
+            "covers": "Rolling average weekly units consumed per SKU updated continuously",
+            "deliverable": "Operations forecast"
+          },
+          {
+            "name": "Reorder point calculation",
+            "covers": "Reorder point = (average daily consumption x supplier lead time) + safety stock with automatic reorder alert",
+            "deliverable": "Reorder point model"
+          },
+          {
+            "name": "Safety stock model",
+            "covers": "Buffer stock calculated per SKU based on demand variability and lead time variability, calibrated per SKU",
+            "deliverable": "Safety stock model"
+          },
+          {
+            "name": "Reorder quantity optimization",
+            "covers": "EOQ or min/max model per SKU balancing order cost, carrying cost, and stockout risk",
+            "deliverable": "Updated reorder point model"
+          },
+          {
+            "name": "Inventory health planning dashboard",
+            "covers": "On-hand, weeks on hand, reorder point, reorder quantity recommendation, and next PO due date per SKU",
+            "deliverable": "Inventory Health dashboard"
+          },
+          {
+            "name": "Operations input to WBR/MBR",
+            "covers": "OTIF status, stockout risks, quality complaint flags, and fulfillment cost vs. plan fed into Commercial business reviews",
+            "deliverable": "Operations on WBR and MBR"
+          }
         ]
       }
     ]
@@ -385,10 +1005,26 @@
         "name": "Baseline Visibility",
         "description": "Core subscription health — growth, churn, modifications, and structured cancellation reason tracking.",
         "milestones": [
-          "Subscription growth baseline",
-          "Expansion revenue tracking",
-          "Subscription modification tracking",
-          "Cancellation reason tracking"
+          {
+            "name": "Subscription growth baseline",
+            "covers": "Daily and weekly active subscribers, new activations, cancellations, net change, and gross churn rate by plan and region",
+            "deliverable": "Subscription growth view"
+          },
+          {
+            "name": "Expansion revenue tracking",
+            "covers": "Upgrades, frequency increases, and add-on products tracked as Net Revenue Retention (NRR)",
+            "deliverable": "Subscription growth view with NRR"
+          },
+          {
+            "name": "Subscription modification tracking",
+            "covers": "Frequency changes, downgrades, pauses, and skips logged as events separate from cancellations",
+            "deliverable": "Subscription modification tracking dashboard including pauses, skips, and downgrades"
+          },
+          {
+            "name": "Cancellation reason tracking",
+            "covers": "Structured cancellation survey categorized and trended weekly",
+            "deliverable": "Cancellation tracker dashboard"
+          }
         ]
       },
       {
@@ -396,15 +1032,51 @@
         "name": "Cohort Foundation",
         "description": "Retention and LTV curves by cohort, channel, plan, and seasonality — built on daily data models.",
         "milestones": [
-          "Daily subscription & customer data models",
-          "Retention curves by acquisition cohort",
-          "Retention curves by channel",
-          "Retention curves by plan / product",
-          "Gift vs. self-purchase segmentation",
-          "Seasonal retention pattern analysis",
-          "Churn curves (time-to-churn)",
-          "LTV by cohort, channel & product",
-          "CAC:LTV and payback period by channel"
+          {
+            "name": "Daily subscription & customer data models",
+            "covers": "Three data models tracking daily retention activity per subscription subscription line and customer",
+            "deliverable": "Daily data models for subscription and customer retention activity"
+          },
+          {
+            "name": "Retention curves by acquisition cohort",
+            "covers": "% still active at Month 1, 2, 3, 6, 12, 24 by acquisition month",
+            "deliverable": "Retention dashboard"
+          },
+          {
+            "name": "Retention curves by channel",
+            "covers": "Retention curve broken out by acquisition channel",
+            "deliverable": "Retention dashboard by channel"
+          },
+          {
+            "name": "Retention curves by plan / product",
+            "covers": "Retention by subscription plan, box size, or product type",
+            "deliverable": "Retention dashboard by plan and product"
+          },
+          {
+            "name": "Gift vs. self-purchase segmentation",
+            "covers": "Gifted vs. self-purchased subscription retention curves tracked separately",
+            "deliverable": "Updated retention dashboard with GWP vs non-GWP segmentation"
+          },
+          {
+            "name": "Seasonal retention pattern analysis",
+            "covers": "Cohort curves overlaid by season of acquisition to surface seasonal churn patterns",
+            "deliverable": "Updated retention dashboard with seasonal cohorts"
+          },
+          {
+            "name": "Churn curves (time-to-churn)",
+            "covers": "At what subscription age do most cancellations happen",
+            "deliverable": "Churn curves and churn analysis"
+          },
+          {
+            "name": "LTV by cohort, channel & product",
+            "covers": "Cumulative revenue per subscriber by cohort over time, broken out by plan, channel, and product",
+            "deliverable": "LTV dashboard"
+          },
+          {
+            "name": "CAC:LTV and payback period by channel",
+            "covers": "Channel-level CAC divided by projected LTV with payback period in months",
+            "deliverable": "Blended CAC:LTV dashboard"
+          }
         ]
       },
       {
@@ -412,12 +1084,36 @@
         "name": "Customer Segmentation",
         "description": "Lifecycle stages, CRM engagement tiers, LRFM scoring, and high-LTV segment identification.",
         "milestones": [
-          "Lifecycle stage definition",
-          "CRM engagement level segmentation",
-          "Cross-segmentation: lifecycle × CRM",
-          "LRFM scoring",
-          "High-LTV segment identification",
-          "Customer segmentation snapshots"
+          {
+            "name": "Lifecycle stage definition",
+            "covers": "Formalized Active, At-Risk, Lapsing, and Churned definitions calibrated to brand's purchase cadence",
+            "deliverable": "Lifecycle segmentation"
+          },
+          {
+            "name": "CRM engagement level segmentation",
+            "covers": "Subscribers classified by email/SMS engagement as Active Passive or Inactive",
+            "deliverable": "CRM Engagement segmentation"
+          },
+          {
+            "name": "Cross-segmentation: lifecycle × CRM",
+            "covers": "Subscribers bucketed across both purchase lifecycle and CRM engagement dimensions",
+            "deliverable": "Cross segmentation opportunity analysis"
+          },
+          {
+            "name": "LRFM scoring",
+            "covers": "Recency, Frequency, Monetary, and Loyalty scored 1-5 per subscriber refreshed weekly",
+            "deliverable": "LRFM segmentation"
+          },
+          {
+            "name": "High-LTV segment identification",
+            "covers": "Top decile subscribers by actual or projected LTV identified and tracked separately",
+            "deliverable": "High LTV segmentation"
+          },
+          {
+            "name": "Customer segmentation snapshots",
+            "covers": "Every subscriber classified into lifecycle stage monthly stored as a slowly changing dimension",
+            "deliverable": "Monthly snapshots of customer segmentation"
+          }
         ]
       },
       {
@@ -425,16 +1121,56 @@
         "name": "CRM & Lifecycle Activation",
         "description": "Automated flows, win-back programs, cancellation intervention, NPS, and voice of customer.",
         "milestones": [
-          "CRM performance measurement",
-          "Frequency mismatch detection",
-          "Segment-triggered CRM flows",
-          "OTP to subscriber nurture",
-          "Win-back program (lapsed subscribers)",
-          "Cancellation flow optimization",
-          "Reactivation & win-back tracking",
-          "NPS & CSAT program",
-          "NPS analytics by segment",
-          "Voice of customer synthesis"
+          {
+            "name": "CRM performance measurement",
+            "covers": "Flow-level metrics tied to retention outcomes: revenue per recipient, click-to-reactivation, churn rescue rate",
+            "deliverable": "CRM Performance dashboard"
+          },
+          {
+            "name": "Frequency mismatch detection",
+            "covers": "Customers with high skip rates flagged and triggered into proactive frequency-change offer",
+            "deliverable": "Frequency mismatch analysis and intervention flow"
+          },
+          {
+            "name": "Segment-triggered CRM flows",
+            "covers": "Automated email/SMS flows triggered by lifecycle stage transitions: welcome, at-risk, lapsing, win-back",
+            "deliverable": "Customer segment data fed to CRM"
+          },
+          {
+            "name": "OTP to subscriber nurture",
+            "covers": "Onboarding and engagement program for OTP customers who haven't yet subscribed",
+            "deliverable": "Customer segment data fed to CRM"
+          },
+          {
+            "name": "Win-back program (lapsed subscribers)",
+            "covers": "Structured reactivation program with timing, offer sequencing, and suppression rules tracked by cohort",
+            "deliverable": "Win-back analysis and CRM flow"
+          },
+          {
+            "name": "Cancellation flow optimization",
+            "covers": "Pause, frequency-change, and discount offers presented before cancellation with reason captured",
+            "deliverable": "Cancellation flow analysis and CRM flow"
+          },
+          {
+            "name": "Reactivation & win-back tracking",
+            "covers": "Cancelled subscribers who reactivated tracked by volume, time-to-reactivation, and channel",
+            "deliverable": "Reactivation dashboard"
+          },
+          {
+            "name": "NPS & CSAT program",
+            "covers": "Structured NPS surveys at key lifecycle moments joined to cohort data",
+            "deliverable": "NPS & CSAT surveys deployed"
+          },
+          {
+            "name": "NPS analytics by segment",
+            "covers": "NPS broken out by lifecycle stage, acquisition channel, product, and tenure",
+            "deliverable": "NPS & CSAT dashboard"
+          },
+          {
+            "name": "Voice of customer synthesis",
+            "covers": "Qualitative signals from reviews, tickets, surveys, and social mentions categorized and quantified",
+            "deliverable": "Voice of Customer dashboard"
+          }
         ]
       },
       {
@@ -442,11 +1178,31 @@
         "name": "Predictive Retention",
         "description": "ML churn scoring, reactivation propensity, upgrade propensity, and LTV prediction models.",
         "milestones": [
-          "Churn risk scoring model",
-          "Churn score → CRM activation",
-          "Reactivation propensity model",
-          "Propensity-to-upgrade model",
-          "LTV prediction model"
+          {
+            "name": "Churn risk scoring model",
+            "covers": "ML model scoring every active subscriber on 30/60/90-day churn probability using behavioral signals",
+            "deliverable": "Churn probability score per customer, churn analysis"
+          },
+          {
+            "name": "Churn score → CRM activation",
+            "covers": "High churn probability scores automatically surface subscribers into intervention CRM flows",
+            "deliverable": "CRM flow for high-churn-probability customers, early warning dashboard"
+          },
+          {
+            "name": "Reactivation propensity model",
+            "covers": "Churned subscribers scored on likelihood to reactivate to prioritize win-back budget",
+            "deliverable": "Reactivation score"
+          },
+          {
+            "name": "Propensity-to-upgrade model",
+            "covers": "Subscribers scored on likelihood to upgrade plan, increase frequency, or add a product",
+            "deliverable": "Upsell dashboard showing customers and products for targeted offers"
+          },
+          {
+            "name": "LTV prediction model",
+            "covers": "Predicted remaining LTV per subscriber based on cohort curve, tenure, engagement signals, and product mix",
+            "deliverable": "Predicted LTV"
+          }
         ]
       },
       {
@@ -454,13 +1210,41 @@
         "name": "Personalization & Growth",
         "description": "Product recommendations, data-derived personas, subscriber P&L, and loyalty program analytics.",
         "milestones": [
-          "Next-best-product recommendation",
-          "Recommendation engine — onsite",
-          "Social proof personalization",
-          "Persona development",
-          "Testimonial propensity model",
-          "Subscriber P&L by segment",
-          "Loyalty program analytics"
+          {
+            "name": "Next-best-product recommendation",
+            "covers": "Collaborative filtering or association rules model recommending the most likely next product per subscriber",
+            "deliverable": "Async recommendation per customer and CRM flow"
+          },
+          {
+            "name": "Recommendation engine — onsite",
+            "covers": "Real-time product recommendations on site, post-checkout, and account portal",
+            "deliverable": "Real-time recommendation engine"
+          },
+          {
+            "name": "Social proof personalization",
+            "covers": "Subscribers shown content and reviews from similar segments to increase product discovery",
+            "deliverable": "Personalized social media reviews on website"
+          },
+          {
+            "name": "Persona development",
+            "covers": "Data-derived subscriber personas based on purchase behavior, product preferences, tenure, LTV, and acquisition source (4-6 personas)",
+            "deliverable": "Customers classified into personas"
+          },
+          {
+            "name": "Testimonial propensity model",
+            "covers": "Subscribers most likely to leave a testimonial or refer scored and targeted",
+            "deliverable": "High propensity customer segmentation"
+          },
+          {
+            "name": "Subscriber P&L by segment",
+            "covers": "Fully-loaded P&L per subscriber segment: revenue, COGS, fulfillment, CRM cost, and predicted LTV",
+            "deliverable": "Segmented P&L"
+          },
+          {
+            "name": "Loyalty program analytics",
+            "covers": "Points earned vs. redeemed, redemption impact on retention rate, and incremental LTV from loyalty mechanics",
+            "deliverable": "Loyalty program dashboard"
+          }
         ]
       }
     ]
